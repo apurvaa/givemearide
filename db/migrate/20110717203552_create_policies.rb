@@ -1,8 +1,10 @@
 class CreatePolicies < ActiveRecord::Migration
   def self.up
     create_table :policies do |t|
-
-      t.timestamps
+		t.string "policyname"
+		t.text "description"
+		t.boolean "isdeleted", :default => false
+		t.timestamps
     end
   end
 

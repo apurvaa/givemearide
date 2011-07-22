@@ -1,8 +1,10 @@
 class CreateFeedbacks < ActiveRecord::Migration
   def self.up
     create_table :feedbacks do |t|
-
-      t.timestamps
+		t.text "feedback"
+		t.integer "rating"	
+		t.boolean "isdeleted", :default => false
+		t.timestamps
     end
   end
 

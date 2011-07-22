@@ -1,8 +1,11 @@
 class CreateCars < ActiveRecord::Migration
   def self.up
     create_table :cars do |t|
-
-      t.timestamps
+		t.string "make"
+		t.string "model"
+		t.integer "year"
+		t.boolean "isdeleted", :default => false
+		t.timestamps
     end
   end
 

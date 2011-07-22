@@ -1,8 +1,12 @@
 class CreateCities < ActiveRecord::Migration
   def self.up
     create_table :cities do |t|
-
-      t.timestamps
+		t.string "name"
+		t.string "state"
+		t.string "country"
+		t.boolean "allowed_city", :default => true
+		t.boolean "isdeleted", :default => false
+		t.timestamps
     end
   end
 
