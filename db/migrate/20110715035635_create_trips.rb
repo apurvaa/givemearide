@@ -4,6 +4,8 @@ class CreateTrips < ActiveRecord::Migration
 		t.integer "user_id"
 		t.integer "policy_id"
 		t.integer "car_id"
+		t.integer "origin_id"
+		t.integer "destination_id"
 		t.string "tripname"
 		t.date "tripdate"
 		t.time "triptime"
@@ -11,14 +13,14 @@ class CreateTrips < ActiveRecord::Migration
 		t.text "description"
 		t.integer "price"
 		t.integer "recommended_price"
-		t.integer "origin"
-		t.integer "destination"
 		t.boolean "isdeleted", :default => false
 		t.timestamps
     end
 	add_index("trips", "user_id")
 	add_index("trips", "policy_id")
 	add_index("trips", "car_id")
+	add_index("trips", "origin_id")
+	add_index("trips", "destination_id")
   end
 
   def self.down
